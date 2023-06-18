@@ -1,5 +1,7 @@
 # The Retriever
 
+A browser game made with [KaboomJs](https://kaboomjs.com/) and [JavaScript](https://www.javascript.com/). It only works on desktop, requires the player to have a ketboard and mouse and runs on the browser.
+
 ## Description
 
 The Retriever is a game where the player has to retrieve lost cargo from a planewreck. The player has to avoid diferent types of enemies and obstacles to get to the cargo. The player can use a crossbow to shoot the enemies.
