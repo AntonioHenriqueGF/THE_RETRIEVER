@@ -1,5 +1,5 @@
 {
-	"name": "TheRetriever",
+	"name": "the-retriever",
 	"version": "1.0.0",
 	"scripts": {
 		"build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
