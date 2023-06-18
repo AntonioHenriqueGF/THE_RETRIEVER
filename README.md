@@ -4,7 +4,7 @@ A browser game made with [KaboomJs](https://kaboomjs.com/) and [JavaScript](http
 
 ## Description
 
-The Retriever is a game where the player has to retrieve lost cargo from a planewreck. The player has to avoid diferent types of enemies and obstacles to get to the cargo. The player can use a crossbow to shoot the enemies.
+The Retriever is a top down shooter game where the player has to retrieve lost cargo from a planewreck. The player has to avoid diferent types of enemies and obstacles to get to the cargo. The player can use a crossbow to shoot the enemies.
 
 ## Instructions
 
