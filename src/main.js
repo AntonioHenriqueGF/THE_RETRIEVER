@@ -25,13 +25,14 @@ const levels = [level1Scene, level2Scene];
 const gameOverScene = new GameOverScene(k, level, levels);
 const victoryScene = new VictoryScene(k, level, levels);
 
-k.scene('next', () => {
-  level++;
+k.scene('next', ({ newLevel }) => {
+  level = newLevel;
+  gameOverScene.level = level;
+  victoryScene.level = level;
   k.go('restart');
 });
 
 k.scene('restart', () => {
-  console.log('restart', level);
   if (level >= levels.length) {
     level = 0;
   }

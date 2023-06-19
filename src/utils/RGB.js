@@ -66,6 +66,11 @@ export class RGB {
     );
   }
 
+  /**
+   *
+   * @param {number[] | string} color Array of RGB values, color name or hexadecimal code
+   * @returns {RGB} RGB instance
+   */
   static create(color) {
     if (Array.isArray(color)) {
       return RGB.fromArray(color);
@@ -77,9 +82,18 @@ export class RGB {
       }
     } else {
       throw new Error(
-        `Invalid parameter for createRGB: color must be an array, a color name or a hexadecimal code (received ${typeof color})`,
+        `Invalid parameter for createRGB: color must be an array, a suported color name or a hexadecimal code (received '${typeof color}' instead)`,
       );
     }
+  }
+
+  /**
+   * Returns an array of RGB values from a color
+   * @param {number[] | string} color Array of RGB values, color name or hexadecimal code
+   * @returns {number[]} Array of RGB values
+   */
+  static getRGBFrom(color) {
+    return RGB.create(color).getRGB();
   }
 
   static validate(rgb, functionName = 'RGB') {

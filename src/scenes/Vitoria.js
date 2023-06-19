@@ -1,17 +1,28 @@
 import { GUIButton } from '../components/GUI/GUIButton';
 import { GUIText } from '../components/GUI/GUIText';
 import { RGB } from '../utils/RGB';
+import { Scene } from './Scene';
 
 export class VictoryScene {
-  constructor(k, level, levels) {
+  /**
+   * @param {KaboomCtx} k
+   * @param {number} level
+   * @param {Scene[]} levelList
+   */
+  constructor(k, level, levelList) {
     this.context = k;
+
     this.level = level;
-    this.levels = levels;
+    this.levelList = levelList;
     this.setUpScene();
   }
 
   getCurrentLevel() {
-    return this.levels[this.level];
+    return this.levelList[this.level];
+  }
+
+  getNextLevel() {
+    return this.levelList[this.level + 1];
   }
 
   setUpScene() {
@@ -66,27 +77,36 @@ export class VictoryScene {
           go('menu');
         });
 
-      backToMenu.render();
-
       const next = new GUIButton(
         this.context,
         180,
         600,
         width() - 360,
         100,
-        this.levels[this.level + 1]
-          ? 'Próxima missão >'
-          : 'Voltar à primeira missão',
+        'Próxima missão >',
         '#4F0700',
       )
         .setFontColor(RGB.create('white'))
         .setFontSize(40)
         .setAlign('center')
         .setOnClick(() => {
-          go('next');
+          this.level++;
+          go('next', { newLevel: this.level });
         });
 
-      next.render();
+      if (this.getNextLevel()) {
+        backToMenu.render();
+
+        next.render();
+      } else {
+        backToMenu
+          .setColor('#4F0700')
+          .setX(180)
+          .setWidth(width() - 360)
+          .setHeight(100)
+          .setFontSize(40)
+          .render();
+      }
     });
   }
 

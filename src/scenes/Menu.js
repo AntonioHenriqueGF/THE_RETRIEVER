@@ -38,7 +38,7 @@ export class MenuScene {
         .setFontSize(30)
         .setAlign('center')
         .setOnClick(() => {
-          go('level1');
+          go('next', { newLevel: 0 });
         });
 
       start.render();

@@ -13,15 +13,7 @@ export class GameOverScene {
   setUpScene() {
     this.context.scene('gameOver', () => {
       setBackground(RGB.fromHex('#580A00').getRGB());
-      const title = new GUIText(
-        this.context,
-        0,
-        100,
-        width(),
-        100,
-        'Você morreu!',
-        'black',
-      )
+      new GUIText(this.context, 0, 100, width(), 100, 'Você morreu!', 'black')
         .setFontColor(RGB.create('white'))
         .setFontSize(60)
         .setAlign('center')
