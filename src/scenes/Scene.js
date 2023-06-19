@@ -93,7 +93,7 @@ export class Scene {
       const enemies = [];
       const coins = [];
       const mowlers = [];
-      this.coinsCollected = 8;
+      this.coinsCollected = 0;
 
       const addEnemy = (elem) => {
         enemies.push(elem);
