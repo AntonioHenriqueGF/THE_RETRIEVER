@@ -1,8 +1,6 @@
 import { Player } from '../components/Player';
-import { CircleElement } from '../models/cartesianElements/CircleElement';
 import { Enemy } from '../components/Enemy';
 import { RGB } from '../utils/RGB';
-import { LVL_ONE_MAP, LVL_TWO_MAP } from '../utils/Maps';
 import { Mowler } from '../components/Mowler';
 import { GUIText } from '../components/GUI/GUIText';
 import { Point2D } from '../utils/cartesianClasses/Point2D';
@@ -95,7 +93,7 @@ export class Scene {
       const enemies = [];
       const coins = [];
       const mowlers = [];
-      this.coinsCollected = 0;
+      this.coinsCollected = 8;
 
       const addEnemy = (elem) => {
         enemies.push(elem);

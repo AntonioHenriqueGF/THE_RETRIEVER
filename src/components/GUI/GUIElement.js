@@ -45,4 +45,35 @@ export class GUIElement {
   destroy() {
     this.entity.destroy();
   }
+
+  setPosition(x, y) {
+    this.x = x;
+    this.y = y;
+    return this;
+  }
+
+  setX(x) {
+    this.x = x;
+    return this;
+  }
+
+  setY(y) {
+    this.y = y;
+    return this;
+  }
+
+  setWidth(width) {
+    this.width = width;
+    return this;
+  }
+
+  setHeight(height) {
+    this.height = height;
+    return this;
+  }
+
+  setColor(color) {
+    this.color = RGB.create(color);
+    return this;
+  }
 }

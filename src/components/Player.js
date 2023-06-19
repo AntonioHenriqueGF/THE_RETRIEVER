@@ -7,14 +7,30 @@ import { Point2D } from '../utils/cartesianClasses/Point2D';
 import { Entity } from './Entity';
 import { GUIButton } from './GUI/GUIButton';
 import { GUIText } from './GUI/GUIText';
+import { Scene } from '../scenes/Scene';
 
 const DEBUG_MODE = false;
 const width = Math.min(screen.width - 200, screen.height - 200);
 
 export class Player extends Entity {
   /**
-   * @param {KaboomCtx} context
-   * @param {string} sprite
+   * @type {import('kaboom').KaboomCtx | import('kaboom').GameObj}
+   */
+  context;
+
+  _keyPressed;
+
+  canShoot;
+
+  /**
+   * @type {import('kaboom').TweenController | null}
+   */
+  curTween;
+
+  level;
+  /**
+   * @param {import('kaboom').KaboomCtx | import('kaboom').GameObj} k
+   * @param {Scene | null} level
    */
   constructor(k, level = null) {
     super({
@@ -186,7 +202,7 @@ export class Player extends Entity {
       .setFontSize(20)
       .setAlign('center')
       .setOnClick(() => {
-        go('restart');
+        go(this.level.sceneName);
       })
       .render();
 
